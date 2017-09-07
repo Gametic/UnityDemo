@@ -5,6 +5,8 @@ using System.Collections;
 
 public class UISpendCreditsBtnCtrl : MonoBehaviour, IPointerClickHandler {
 
+	GameMonitor Monitor { get { return GameMonitor.Instance; } }
+
 	public int creditsToSpend = 10;
 	
 	void Start () {
@@ -19,5 +21,7 @@ public class UISpendCreditsBtnCtrl : MonoBehaviour, IPointerClickHandler {
 		}
 		PlayerPrefs.SetInt(GameMonitor.CREDITS, credits);
 		PlayerPrefs.Save();
+
+		Monitor.SpendCredit(credits, creditsToSpend);
 	}
 }

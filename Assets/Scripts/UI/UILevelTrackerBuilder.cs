@@ -25,10 +25,12 @@ public class UILevelTrackerBuilder : MonoBehaviour {
 	}
 
 	void OnDestroy() {
-		Monitor.OnLevelStarted -= handleMonitorEvent;
-		Monitor.OnLevelCompleted -= handleMonitorEvent;
-		Monitor.OnLevelFailed -= handleMonitorEvent;
-		Monitor.OnDataReset -= handleMonitorEvent;
+		if (Monitor) {
+			Monitor.OnLevelStarted -= handleMonitorEvent;
+			Monitor.OnLevelCompleted -= handleMonitorEvent;
+			Monitor.OnLevelFailed -= handleMonitorEvent;
+			Monitor.OnDataReset -= handleMonitorEvent;
+		}
 	}
 
 	private void updateButtons(int value) {
