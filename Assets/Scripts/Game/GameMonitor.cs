@@ -68,7 +68,10 @@ public class GameMonitor : Singleton<GameMonitor> {
 		PlayerPrefs.Save();
 
 		if (OnDataReset != null) OnDataReset();
-		SceneManager.LoadScene ("Splash");
+		Application.Quit ();
+		#if UNITY_EDITOR
+			UnityEditor.EditorApplication.ExecuteMenuItem("Edit/Play");
+		#endif
 	}
 
 	private void SaveCompletedLevel() {
