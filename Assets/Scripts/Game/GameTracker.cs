@@ -26,7 +26,7 @@ public class GameTracker : MonoBehaviour {
 	}
 
 	void HandleOnLevelStarted (int levelNumber) {
-		Gametic.CustomEvent ("GameLevelFailure", new Dictionary<string, object> {
+		Gametic.CustomEvent ("GameLevelStarted", new Dictionary<string, object> {
 			{ "level", Monitor.lastPlayedLevel },
 			{ "credits",  PlayerPrefs.GetInt(GameMonitor.CREDITS) }
 		});
