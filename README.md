@@ -1,6 +1,8 @@
 # UnityDemo
 GameticUnitySDK Demo Application
 
+Needs Unity3d 5.5.0+ to open this demo project.
+
 Test
 --------
 You can download apk from the [Releases](https://github.com/Gametic/UnityDemo/releases) page. this build send data to demo user.
