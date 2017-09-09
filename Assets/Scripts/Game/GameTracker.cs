@@ -27,21 +27,21 @@ public class GameTracker : MonoBehaviour {
 
 	void HandleOnLevelStarted (int levelNumber) {
 		Gametic.CustomEvent ("GameLevelStarted", new Dictionary<string, object> {
-			{ "level", Monitor.lastPlayedLevel },
+			{ "level", Monitor.lastPlayedLevel.ToString() },
 			{ "credits",  PlayerPrefs.GetInt(GameMonitor.CREDITS) }
 		});
 	}
 
 	void HandleOnLevelFailed (int levelNumber) {
 		Gametic.CustomEvent ("GameLevelFailure", new Dictionary<string, object> {
-			{ "level", Monitor.lastPlayedLevel },
+			{ "level", Monitor.lastPlayedLevel.ToString() },
 			{ "credits",  PlayerPrefs.GetInt (GameMonitor.CREDITS) }
 		});
 	}
 
 	void HandleOnLevelCompleted (int levelNumber) {
 		Gametic.CustomEvent("GameLevelComplete", new Dictionary<string, object> {
-			{ "level", Monitor.lastPlayedLevel },
+			{ "level", Monitor.lastPlayedLevel.ToString() },
 			{ "credits",  PlayerPrefs.GetInt(GameMonitor.CREDITS) }
 		});
 	}
